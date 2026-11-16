@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SmartShelf</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>SmartShelf</h1>
+    <nav>
+      <button id="tab-customers" class="active">Customers</button>
+      <button id="tab-stock">Stock</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Customers list -->
+    <section id="view-customers">
+      <div class="summary">Total credit pending: <strong id="total">₹0</strong></div>
+      <ul id="customer-list" class="list"></ul>
+      <form id="customer-form">
+        <input id="c-name" placeholder="Customer name" required>
+        <input id="c-phone" placeholder="Phone with country code, e.g. 919876543210" inputmode="tel">
+        <button>Add customer</button>
+      </form>
+    </section>
+
+    <!-- One customer's ledger -->
+    <section id="view-ledger" hidden>
+      <button id="back" class="link">&larr; Back</button>
+      <h2 id="l-name"></h2>
+      <p>Balance: <strong id="l-balance"></strong></p>
+      <form id="entry-form">
+        <input id="e-amount" type="number" min="1" step="any" placeholder="Amount (₹)" required>
+        <input id="e-note" placeholder="Note (optional)">
+        <div class="buttons">
+          <button type="submit" data-type="credit">Add credit</button>
+          <button type="submit" data-type="payment" class="secondary">Received payment</button>
+        </div>
+      </form>
+      <div class="buttons">
+        <button id="remind" class="secondary">Send WhatsApp reminder</button>
+        <button id="delete-customer" class="danger">Delete customer</button>
+      </div>
+      <ul id="entry-list" class="list"></ul>
+    </section>
+
+    <!-- Stock -->
+    <section id="view-stock" hidden>
+      <ul id="item-list" class="list"></ul>
+      <form id="item-form">
+        <input id="i-name" placeholder="Item name" required>
+        <input id="i-qty" type="number" min="0" placeholder="Quantity" required>
+        <input id="i-min" type="number" min="0" placeholder="Low-stock level (default 2)">
+        <button>Add item</button>
+      </form>
+    </section>
+
+    <p id="error" role="alert" hidden></p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
