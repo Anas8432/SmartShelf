@@ -3,7 +3,7 @@
 A simple web app that helps small neighborhood shops manage **customer credit (udhaar)** and **stock**. Shopkeepers can record credit and payments, see every customer's balance at a glance, send WhatsApp payment reminders, and get low-stock alerts.
 
 **Live demo:** https://smartshelf-eye9.onrender.com
-**Source code:** 
+**Source code:** https://github.com/Anas8432/SmartShelf
 
 > The demo runs on a free hosting plan. It may take about a minute to wake up on the first visit, and data can reset when the server restarts.
 
